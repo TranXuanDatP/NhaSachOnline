@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center mt-2">
+    <h1 class="display-4 fw-bold">Chào mừng đến với khu vườn của tri thức</h1>
+</div>
+
+<div class="my-2">
+    <form asp-action="Index" class="row row-cols-lg-auto g-3 align-items-center">
+        <div class="col-12">
+            <label class="visually-hidden" for="inlineFormInputGroupUsername">Search</label>
+            <div class="input-group">
+                @* <div class="input-group-text"></div> *@
+                <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Search">
+            </div>
+        </div>
+
+        <div class="col-12">
+            <label class="visually-hidden" for="inlineFormSelectPref">Thể loại</label>
+            <select class="form-select" id="inlineFormSelectPref">
+                <option selected>Thể loại...</option>
+                <option value="1">Ngụ ngôn</option>
+                <option value="2">Tình cảm gia đình</option>
+                <option value="3">Văn học Việt Nam</option>
+                <option value="4">Tình yêu quê hương</option>
+                <option value="4">Kinh dị</option>
+            </select>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </form>
+</div>
+<div class="w-100 mt-4 mb-5 d-flex flex-wrap justify-content-center">
+     @for (int i = 1; i <= 8; i++)
+    {
+
+        <div class="card mx-2 mb-4" style="width: 18rem;">
+            <img src="~/pictures/haychamsocme.jpg" class="card-img-top" alt="Hãy chăm sóc mẹ" />
+            <div class="card-body">
+                <h5 class="card-title">Hãy Chăm Sóc Mẹ</h5>
+                <p class="card-text">Tiểu thuyết giúp chúng ta hiểu rõ hơn về người mẹ đáng trân trọng của chúng ta.</p>
+
+                <p class="card-text">Tác giả:</p>
+                <p class="card-text">Giá:</p>
+                <p class="card-text">Thể loại:</p>
+                <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+            </div>
+        </div>
+    } 
+    
+    @* <select>
+        @foreach(var genre in Model)
+{
+    <option selected="@(genre.Id == Model.GenreId)" value="@genre.Id"></option>
+}
+    </select> *@
+
+</div>
